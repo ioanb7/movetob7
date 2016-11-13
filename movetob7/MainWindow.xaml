@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:movetob7"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    
     <Grid>
-        
+        <ListBox Margin="20" ItemsSource="{Binding Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Uses}" />
+                        <TextBlock Text="{Binding Path=Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="inputTextBox" HorizontalAlignment="Left" Height="22" Margin="178,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" KeyDown="inputTextBox_KeyDown"/>
+
     </Grid>
 </Window>
